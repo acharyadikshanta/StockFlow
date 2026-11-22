@@ -2,6 +2,7 @@ package com.acharya.dikshanta.StockFlow.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class SoftDeleteBaseEntity extends BaseEntity {
+    @Builder.Default
     @Column(name = "deleted", nullable = false)
     private boolean deleted = false;
 
